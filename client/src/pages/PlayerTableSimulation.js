@@ -134,6 +134,7 @@ const PlayerTableSimulation = () => {
     return () => {
       mockSocket.stopSimulation();
       mockSocket.off('player_status_update', handlePlayerStatusUpdate);
+      
     };
   }, []);
 
@@ -155,6 +156,7 @@ const PlayerTableSimulation = () => {
   const stopSimulation = () => {
     setIsSimulationRunning(false);
     mockSocket.stopSimulation();
+    setPlayers(initialPlayers)
   };
 
   const toggleSimulation = () => {
